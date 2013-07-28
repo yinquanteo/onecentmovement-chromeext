@@ -9,11 +9,13 @@ var onecent = (function() {
     //popUpDelay: 2000,
     //donationEndPoint: "http://onecent.heroku.com/round_ups.json"
   //}
-  var regex = /grand total:\s*\$([,\d]+\.\d+)/i;
+  var regex = /(grand total|total|total amount)[:\s]*S?\$?([,\d]+\.\d+)/i;
+  var authToken;
+
   var matchedAmount = function () {
     // TODO ensure cross browser compatibility of innerText
     var m = document.body.innerText.match(regex);
-    return (m ? m[1] : null);
+    return (m ? m[2] : null);
   };
   var twoDecimals = function(amount) {
     return parseFloat(amount).toFixed(2);
@@ -29,7 +31,9 @@ var onecent = (function() {
     var amount = matchedAmount();
     if (amount) {
       setTimeout(function () {
-        chrome.runtime.sendMessage({}, function(response) {});
+        chrome.runtime.sendMessage({}, function(response) {
+          authToken = response["token"];
+        });
         var donation = formattedAmount(donationTotal(amount));
         var donateText = "Your invoice amount " + formattedAmount(amount) + "\n"
                        + "Donate " + donation + "?";
@@ -47,7 +51,8 @@ var onecent = (function() {
       data: {
         round_up: {
           amount: (amount * 100)
-        }
+        },
+        auth_token: authToken
       },
       success: function () {
         alert("Donated " + amount);
