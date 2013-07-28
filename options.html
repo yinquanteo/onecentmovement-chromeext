@@ -9,15 +9,20 @@
   </head>
   <body>
     <div class="container">
-      <form class="form-signin">
+      <form id="signin" class="form">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="input-block-level" placeholder="Email address">
-        <input type="password" class="input-block-level" placeholder="Password">
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn  btn-primary" type="submit">Sign in</button>
+        <input id="email" type="text" class="input-block-level" placeholder="Email address">
+        <input id="password" type="password" class="input-block-level" placeholder="Password">
+        <button id="sign-in-button" class="btn btn-primary" type="submit">Sign in</button>
+      </form>
+      <form id="signout" class="form hide">
+        <p>
+          <b>Logged in as:</b>
+          <span id="signed-in-email"></span>
+        </p>
+        <button id="sign-out-button" class="btn btn-primary" type="submit">Sign out</button>
       </form>
     </div>
+    <script src="options.js"></script>
   </body>
 </html>
