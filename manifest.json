@@ -6,13 +6,17 @@
   "version": "1.0",
   "background" : { "scripts": ["background.js"] },
   "page_action": { "default_icon": "images/icon.png" },
+  "web_accessible_resources": [
+    "donation-modal.html"
+  ],
   "options_page": "options.html",
   "content_scripts" : [
     {
       "matches" : ["http://*/*", "https://*/*"],
-      "js" : ["contentscript.js", "lib/jquery-1.10.2.min.js"],
+      "css" : ["stylesheets/onecent-foundation.css"],
+      "js" : ["lib/jquery-1.10.2.min.js", "lib/foundation.4.2.3.min.js", "contentscript.js"],
       "run_at" : "document_idle",
-      "all_frames" : false
+      "all_frames" : true
     }
   ]
 }
