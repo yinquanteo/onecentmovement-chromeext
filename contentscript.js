@@ -54,16 +54,6 @@ var modalBoss = (function() {
 
 
 var onecent = (function() {
-  // dev
-  var appConfig = {
-    popUpDelay: 0,
-    donationEndPoint: "http://localhost:3000/round_ups.json"
-  }
-  //production
-  //var appConfig = {
-    //popUpDelay: 2000,
-    //donationEndPoint: "http://onecent.heroku.com/round_ups.json"
-  //}
   var regex = /(grand total|total|total amount)[:\s]*S?\$?([,\d]+\.\d+)/i;
   var authToken;
 
@@ -99,7 +89,7 @@ var onecent = (function() {
           roundUp: donationTotal(amount),
           purchaseURL: window.location.href
         });
-      }, appConfig.popUpDelay);
+      }, ONECENT_CONFIG.popUpDelay);
     }
   };
 

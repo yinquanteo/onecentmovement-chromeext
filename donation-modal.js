@@ -21,21 +21,6 @@ var Engine = (function () {
     return query_string;
   }();
 
-  var donate = function(amount) {
-    $.ajax({
-      type: "POST",
-      url: appConfig.donationEndPoint,
-      data: {
-        round_up: {
-          amount: (amount * 100)
-        },
-        auth_token: authToken
-      },
-      success: function () {
-        alert("Donated " + amount);
-      }
-    });
-  };
   var donate = function(query) {
     // TODO change to production URL
     // TODO ensure that auth token is present (i.e. check for it)
@@ -43,7 +28,7 @@ var Engine = (function () {
     $("#main-text").hide();
     $.ajax({
       type: "POST",
-      url: "http://localhost:3000/round_ups.json",
+      url: ONECENT_CONFIG.donationEndPoint,
       data: {
         round_up: {
           amount: (query.roundUp * 100),

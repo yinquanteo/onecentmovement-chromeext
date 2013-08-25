@@ -14,7 +14,7 @@
     {
       "matches" : ["http://*/*", "https://*/*"],
       "css" : ["stylesheets/onecent-foundation.css"],
-      "js" : ["lib/jquery-1.10.2.min.js", "lib/foundation.4.2.3.min.js", "contentscript.js"],
+      "js" : ["lib/jquery-1.10.2.min.js", "lib/foundation.4.2.3.min.js", "app-config.js", "contentscript.js"],
       "run_at" : "document_idle",
       "all_frames" : true
     }
