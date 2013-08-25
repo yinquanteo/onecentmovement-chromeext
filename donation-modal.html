@@ -10,9 +10,30 @@
         width: 16px;
         margin-top: -5px;
       }
+      #loading-message {
+        text-align: center;
+      }
+      #loading-message .loading-img {
+        margin-top: 30px;
+      }
     </style>
   </head>
   <body>
+    <div id="loading-message" hidden>
+      <h2 class="text-info">
+        Hang on while we process your request
+      </h2>
+      <p class="loading-img">
+        <img src="images/loader.gif">
+      </p>
+    </div>
+    <div id="error-message" hidden>
+      <h2 class="text-danger">Oops, something went wrong.</h2>
+      <p class="lead">
+        Please refresh this page and try again.
+        If you still experience issues, please contact support@onecentmovement.org
+      </p>
+    </div>
     <div id="main-text">
       <h2>
         Round Up Your Transaction!
@@ -30,7 +51,7 @@
       <button id="confirm-donation" class="btn btn-primary">Yes Please!</button>
     </div>
     <div id="success-message" hidden>
-      <h2>Success!</h2>
+      <h2 class="text-success">Success!</h2>
       <p class="lead">
         Rounded up amount of <span class="roundup-amount"></span> will show up on your
         <a href="http://onecentmovement.org" target="_blank">One Cent Movement Dashboard</a>.

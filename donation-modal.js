@@ -39,6 +39,8 @@ var Engine = (function () {
   var donate = function(query) {
     // TODO change to production URL
     // TODO ensure that auth token is present (i.e. check for it)
+    $("#loading-message").show();
+    $("#main-text").hide();
     $.ajax({
       type: "POST",
       url: "http://localhost:3000/round_ups.json",
@@ -51,8 +53,12 @@ var Engine = (function () {
         auth_token: localStorage["token"]
       },
       success: function () {
+        $("#loading-message").hide();
         $("#success-message").show();
-        $("#main-text").hide();
+      },
+      error: function () {
+        $("#loading-message").hide();
+        $("#error-message").show();
       }
     });
   };
