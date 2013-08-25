@@ -15,7 +15,7 @@ var modalBoss = (function() {
     modalContainer.className = "onecent-movement";
     var modalString = [
       '<div id="onecent-donate-modal" class="reveal-modal">',
-        '<iframe id="onecent-modal-iframe" frameBorder=0 height="225px" width="100%" ></iframe>',
+        '<iframe id="onecent-modal-iframe" frameBorder=0 height="250px" width="100%" ></iframe>',
         '<a class="close-reveal-modal" style="text-decoration:none;">&#215;</a>',
       '</div>',
       '<div class="reveal-modal-bg" style="display: none"></div>'
