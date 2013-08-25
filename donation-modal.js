@@ -36,14 +36,18 @@ var Engine = (function () {
       }
     });
   };
-  var donate = function(amount) {
+  var donate = function(query) {
     // TODO change to production URL
     // TODO ensure that auth token is present (i.e. check for it)
     $.ajax({
       type: "POST",
       url: "http://localhost:3000/round_ups.json",
       data: {
-        round_up: { amount: (amount * 100) },
+        round_up: {
+          amount: (query.roundUp * 100),
+          transaction_amount: (query.total * 100),
+          url: decodeURIComponent(query.purchaseURL)
+        },
         auth_token: localStorage["token"]
       },
       success: function () {
@@ -63,6 +67,6 @@ $(function() {
   $('.total-amount').html("$" + Engine.query.total);
   $('.roundup-amount').html("$" + Engine.query.roundUp);
   $('#confirm-donation').click(function() {
-    Engine.donate(Engine.query.roundUp)
+    Engine.donate(Engine.query);
   });
 });

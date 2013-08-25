@@ -34,11 +34,19 @@ var modalBoss = (function() {
     $(document).foundation();
   };
 
-  // options => {total: invoiceTotal, roundUp: roundUpTotal, success: successCallback}
+  // options => {total: invoiceTotal, roundUp: roundUpTotal}
   var show = function (options) {
-    var params = "?total="+ options.total + "&roundUp=" + options.roundUp;
+    var params = buildParams(options);
     $modalContents.attr('src', chrome.extension.getURL("donation-modal.html") + params);
     $donateModal.foundation('reveal', 'open');
+  };
+
+  var buildParams = function (options) {
+    var params = [];
+    for (var k in options) {
+      params.push("" + k + "=" + encodeURIComponent(options[k]));
+    }
+    return "?" + params.join("&");
   };
 
   return { init: init, show: show };
@@ -71,9 +79,12 @@ var onecent = (function() {
     return "$" + twoDecimals(amount);
   };
   var donationTotal = function(amount) {
-    return twoDecimals(Math.ceil(amount) - amount);
+    var roundup = Math.ceil(amount) - amount;
+    if (Math.ceil(amount) == amount) {
+      roundup += 1;
+    }
+    return twoDecimals(roundup);
   };
-
 
   var displayDonationDialog = function () {
     var amount = matchedAmount();
@@ -86,26 +97,10 @@ var onecent = (function() {
         modalBoss.show({
           total: twoDecimals(amount),
           roundUp: donationTotal(amount),
-          success: function () { donate(donationTotal(amount)) }
+          purchaseURL: window.location.href
         });
       }, appConfig.popUpDelay);
     }
-  };
-
-  var donate = function(amount) {
-    $.ajax({
-      type: "POST",
-      url: appConfig.donationEndPoint,
-      data: {
-        round_up: {
-          amount: (amount * 100)
-        },
-        auth_token: authToken
-      },
-      success: function () {
-        alert("Donated " + amount);
-      }
-    });
   };
 
   return {
