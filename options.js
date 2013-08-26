@@ -18,8 +18,7 @@ $(function() {
 
   $("#signin").submit(function() {
     $.ajax({
-      //TODO CHANGE URL
-      url: 'http://localhost:3000/tokens.json',
+      url: ONECENT_CONFIG.authTokenEndPoint,
       type: 'POST',
       data: {
         email:    $("#email").val(),
@@ -37,8 +36,7 @@ $(function() {
   // init. show signed in pane if valid token already stored
   if (localStorage["token"]) {
     $.ajax({
-      //TODO CHANGE URL
-      url: 'http://localhost:3000/tokens/' + localStorage["token"] + '.json',
+      url: ONECENT_CONFIG.authTokenEndPoint + localStorage["token"] + '.json',
       type: 'GET',
       success: function(data) {
         signIn(data["email"], data["token"]);

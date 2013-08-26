@@ -22,7 +22,6 @@ var Engine = (function () {
   }();
 
   var donate = function(query) {
-    // TODO change to production URL
     // TODO ensure that auth token is present (i.e. check for it)
     $("#loading-message").show();
     $("#main-text").hide();
