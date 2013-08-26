@@ -1,4 +1,6 @@
 $(function() {
+  $("#register-link").attr('href', ONECENT_CONFIG.signUpLink);
+
   var signIn = function (email, token) {
     $("#signin").hide();
     $("#signin-error").hide();
