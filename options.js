@@ -1,6 +1,7 @@
 $(function() {
   var signIn = function (email, token) {
     $("#signin").hide();
+    $("#signin-error").hide();
     $("#signout").show();
     $("#signed-in-email").html(email);
     localStorage.setItem("email", email);
@@ -26,6 +27,9 @@ $(function() {
       },
       success: function(data) {
         signIn(data["email"], data["token"]);
+      },
+      error: function(data) {
+        $("#signin-error").show();
       }
     });
     return false;
