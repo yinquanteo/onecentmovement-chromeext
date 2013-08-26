@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-
+  "version": "0.0.1",
   "name": "One Cent Movement",
   "description": "One Cent Movement is a non-profit organisation that's all about turning everyday transactions into opportunities to give to charity.",
-  "version": "1.0",
+
   "background" : { "scripts": ["background.js"] },
   "page_action": { "default_icon": "images/icon.png" },
   "web_accessible_resources": [
