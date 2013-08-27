@@ -6,6 +6,10 @@
     <script src="lib/jquery-1.10.2.min.js"></script>
     <script src="lib/bootstrap.min.js"></script>
     <style>
+      html{
+        text-align: center;
+        padding: 30px 0px 30px 0px;
+      }
       img.onecent-logo {
         width: 16px;
         margin-top: -5px;
@@ -16,6 +20,22 @@
       #loading-message .loading-img {
         margin-top: 30px;
       }
+      .btn-ocm{
+        background: #FCB916;
+        border-radius: 41px;
+        padding: 10px 30px;
+        font-weight: bold;
+        border-color: #FCA906;
+      }
+      .btn-ocm:hover{
+        background: #FCA906;
+        border-radius: 41px;
+        padding: 10px 30px;
+        font-weight: bold;
+        border-color: #FCA906;
+      }
+
+
     </style>
   </head>
   <body>
@@ -31,7 +51,9 @@
       <h2 class="text-danger">Oops, something went wrong.</h2>
       <p class="lead">
         Your spare change didn't make it down the pipe!
-        If refreshing doesn't work, you may yell at us at support@onecentmovement.org
+        If refreshing doesn't work,
+        <br/>
+        you may yell at us at <a href="mailto:support@onecentmovement.org">support@onecentmovement.org</a>
       </p>
     </div>
     <div id="main-text">
@@ -41,14 +63,15 @@
       <p class="lead">
         A little bird tells us you're making a purchase of <i class="total-amount"></i>.
         <br>
-        How about rounding up this transaction and donating <i class="roundup-amount"></i> to make the world a better place?
+        How about rounding up this transaction and donating <i class="roundup-amount"></i>
+        to make the world a better place?
       </p>
       <p>
         <img class="onecent-logo" src="images/icon.png">
         One Cent Movement
       </p>
       <hr>
-      <button id="confirm-donation" class="btn btn-primary">Just put it on my tab!</button>
+      <button id="confirm-donation" class="btn btn-primary btn-ocm">Just put it on my tab!</button>
     </div>
     <div id="success-message" hidden>
       <h2 class="text-success">Level up!</h2>

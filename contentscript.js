@@ -14,8 +14,8 @@ var modalBoss = (function() {
     var modalContainer = document.createElement("div");
     modalContainer.className = "onecent-movement";
     var modalString = [
-      '<div id="onecent-donate-modal" class="reveal-modal">',
-        '<iframe id="onecent-modal-iframe" frameBorder=0 height="250px" width="100%" ></iframe>',
+      '<div id="onecent-donate-modal" class="reveal-modal" style="z-index: 99999;max-width: 700px;margin-left: -350px;border-radius: 8px;text-align: center;background: rgba(50,50,50,0.4);padding: 10px 10px 6px 10px;box-shadow: none;border: none;">',
+        '<iframe id="onecent-modal-iframe" frameBorder=0 height="300px" width="100%" ></iframe>',
         '<a class="close-reveal-modal" style="text-decoration:none;">&#215;</a>',
       '</div>',
       '<div class="reveal-modal-bg" style="display: none"></div>'
