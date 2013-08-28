@@ -9,8 +9,8 @@ if (ONECENT_DEVELOPMENT_MODE) {
 } else {
   var ONECENT_CONFIG = {
     popUpDelay: 2000,
-    donationEndPoint: "http://onecent.heroku.com/round_ups.json",
-    authTokenEndPoint: "http://onecent.heroku.com/tokens",
-    signUpLink: "http://onecent.heroku.com/register"
+    donationEndPoint: "http://onecent.herokuapp.com/round_ups.json",
+    authTokenEndPoint: "http://onecent.herokuapp.com/tokens",
+    signUpLink: "http://onecent.herokuapp.com/register"
   };
 }
