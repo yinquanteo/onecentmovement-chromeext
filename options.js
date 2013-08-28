@@ -1,3 +1,6 @@
+// JavaScript handlers for signing in & registering.
+// Used in donation-modal & options page
+
 $(function() {
   $("#register-link").attr('href', ONECENT_CONFIG.signUpLink);
 
@@ -21,7 +24,7 @@ $(function() {
 
   $("#signin").submit(function() {
     $.ajax({
-      url: ONECENT_CONFIG.authTokenEndPoint,
+      url: ONECENT_CONFIG.authTokenEndPoint + ".json",
       type: 'POST',
       data: {
         email:    $("#email").val(),
@@ -42,7 +45,7 @@ $(function() {
   // init. show signed in pane if valid token already stored
   if (localStorage["token"]) {
     $.ajax({
-      url: ONECENT_CONFIG.authTokenEndPoint + localStorage["token"] + '.json',
+      url: ONECENT_CONFIG.authTokenEndPoint + "/" + localStorage["token"] + '.json',
       type: 'GET',
       success: function(data) {
         signIn(data["email"], data["token"]);

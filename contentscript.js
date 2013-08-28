@@ -15,7 +15,7 @@ var modalBoss = (function() {
     modalContainer.className = "onecent-movement";
     var modalString = [
       '<div id="onecent-donate-modal" class="reveal-modal">',
-        '<iframe id="onecent-modal-iframe" frameBorder=0 height="310px" width="100%" style="overflow:hidden;"></iframe>',
+        '<iframe id="onecent-modal-iframe" frameBorder=0 height="370px" width="100%" style="overflow:hidden;"></iframe>',
         '<a class="close-reveal-modal" style="text-decoration:none;">&#215;</a>',
       '</div>',
       '<div class="reveal-modal-bg" style="display: none"></div>'
@@ -39,7 +39,6 @@ var modalBoss = (function() {
     var params = buildParams(options);
     $modalContents.attr('src', chrome.extension.getURL("donation-modal.html") + params);
     $donateModal.foundation('reveal', 'open');
-    console.log($('#onecent-donate-modal').contentWindow.document.getElementsByTagName('body')[0].scrollHeight);
   };
 
   var buildParams = function (options) {

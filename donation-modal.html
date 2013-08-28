@@ -45,6 +45,15 @@
         border-color: #FCA906;
       }
 
+      .form-inline .form-control {
+        display: inline-block;
+      }
+
+      .form-inline .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+      }
 
     </style>
   </head>
@@ -81,7 +90,33 @@
         One Cent Movement
       </p>
       <hr>
-      <button id="confirm-donation" class="btn btn-primary btn-ocm">Just put it on my tab!</button>
+      <div id="signout" hidden>
+        <button id="confirm-donation" class="btn btn-primary btn-ocm">Just put it on my tab!</button>
+      </div>
+      <form id="signin" class="form-inline">
+        <div>
+          To donate, sign in first
+        </div>
+        <div id="signin-error" class="alert alert-danger" hidden>
+          <strong>Oops!</strong> Email or password didn't match, please try again.
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="email">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Email address">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <button id="sign-in-button" class="btn btn-primary" type="submit">Sign in</button>
+        </div>
+        <div>
+          Don't have any account?
+          <a id="register-link" href="" target="_blank">Sign up here</a>
+          and then return to complete your checkout.
+        </div>
+      </form>
     </div>
     <div id="success-message" hidden>
       <h2 class="text-success">Level up!</h2>
@@ -94,6 +129,7 @@
       </p>
     </div>
     <script src="app-config.js"></script>
+    <script src="options.js"></script>
     <script src="donation-modal.js"></script>
   </body>
 </html>
