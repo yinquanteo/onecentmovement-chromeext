@@ -5,6 +5,7 @@
     <link href="lib/bootstrap.min.css" rel="stylesheet">
     <script src="lib/jquery-1.10.2.min.js"></script>
     <script src="lib/bootstrap.min.js"></script>
+    <script href="stylesheets/onecent-foundation.css" rel="stylesheet"></script>
     <style>
       html{
         text-align: center;
@@ -76,47 +77,50 @@
       </p>
     </div>
     <div id="main-text">
-      <h2>
-        Time to make a difference!
-      </h2>
-      <p class="lead">
-        A little bird tells us you're making a purchase of <i class="total-amount"></i>.
-        <br>
-        How about rounding up this transaction and donating <i class="roundup-amount"></i>
-        <br>to make the world a better place?
-      </p>
-      <p>
-        <img class="onecent-logo" src="images/icon.png">
-        One Cent Movement
-      </p>
-      <hr>
-      <div id="signout" hidden>
-        <button id="confirm-donation" class="btn btn-primary btn-ocm">Just put it on my tab!</button>
-      </div>
-      <form id="signin" class="form-inline">
-        <div>
-          To donate, sign in first
-        </div>
-        <div id="signin-error" class="alert alert-danger" hidden>
-          <strong>Oops!</strong> Email or password didn't match, please try again.
-        </div>
-        <div class="form-group">
-          <label class="sr-only" for="email">Email address</label>
-          <input type="email" class="form-control" id="email" placeholder="Email address">
-        </div>
-        <div class="form-group">
-          <label class="sr-only" for="password">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Password">
-        </div>
-        <div class="form-group">
-          <button id="sign-in-button" class="btn btn-primary" type="submit">Sign in</button>
-        </div>
-        <div>
-          Don't have any account?
-          <a id="register-link" href="" target="_blank">Sign up here</a>
-          and then return to complete your checkout.
-        </div>
-      </form>
+          <h2>
+            Time to make a difference!
+          </h2>
+          <p class="lead">
+            A little bird tells us you're making a purchase of <i class="total-amount"></i>.
+            <br>
+            How about rounding up this transaction and donating <i class="roundup-amount"></i>
+            <br>to make the world a better place?
+          </p>
+          <p>
+            <img class="onecent-logo" src="images/icon.png">
+            One Cent Movement
+          </p>
+          <hr>
+          <div id="signout" hidden>
+            <button id="confirm-donation" class="btn btn-primary btn-ocm">Just put it on my tab!</button>
+          </div>
+          <form id="signin" class="form-inline">
+            <div>
+              Sign in like the flash.
+            </div>
+            <br>  
+            <div id="signin-error" class="alert alert-danger" hidden>
+              <strong>Oops!</strong> Email or password didn't match, please try again.
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="email">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Email address">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <button id="sign-in-button" class="btn btn-primary" type="submit">Sign in</button>
+            </div>
+            <br>
+            <br>
+            <div>
+              <i>Don't have any account yet?
+              <a id="register-link" href="" target="_blank">Get one here</a>
+              under 30 seconds and come <br> back here to complete your checkout. </i>
+            </div>
+          </form>
     </div>
     <div id="success-message" hidden>
       <h2 class="text-success">Level up!</h2>
