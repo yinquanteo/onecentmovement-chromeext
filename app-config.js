@@ -1,4 +1,4 @@
-var ONECENT_DEVELOPMENT_MODE = true;
+var ONECENT_DEVELOPMENT_MODE = false;
 if (ONECENT_DEVELOPMENT_MODE) {
   var ONECENT_CONFIG = {
     popUpDelay: 0,
