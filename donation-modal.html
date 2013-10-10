@@ -2,10 +2,13 @@
 <html>
   <head>
     <title>Donate</title>
+    <meta name="twitter:widgets:csp" content="on">
     <link href="lib/bootstrap.min.css" rel="stylesheet">
     <script src="lib/jquery-1.10.2.min.js"></script>
     <script src="lib/bootstrap.min.js"></script>
-    <script href="stylesheets/onecent-foundation.css" rel="stylesheet"></script>
+    <link href="stylesheets/onecent-foundation.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/zocial.css" />
+    <link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
     <style>
       html{
         text-align: center;
@@ -65,6 +68,11 @@
       }
       a {
         color: #FDB913;
+      }
+      .zocial.facebook {
+        vertical-align: top;
+        font-size: 13px;
+        margin: 0 5px;
       }
     </style>
   </head>
@@ -126,9 +134,13 @@
             <br>
             <br>
             <div>
-              <i>Don't have any account yet?
-              <a id="register-link" href="" target="_blank">Get one here</a>
-              under 30 seconds and come <br> back here to complete your checkout. </i>
+              <i>
+                Don't have any account yet?
+                <a id="register-link" href="" target="_blank">Get one here</a>
+                under 30 seconds and come
+                <br>
+                back here to complete your checkout.
+              </i>
             </div>
           </form>
     </div>
@@ -140,6 +152,14 @@
       </p>
       <p class="lead">
         You may return and complete the purchase. Live long and prosper.
+      </p>
+      <p>
+        <button class="zocial facebook">
+          Share on Facebook
+        </button>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://onecentmovement.org"
+           data-text="I just made a difference by donating my loose change from online shopping. Find out how:" data-size="large">Tweet</a>
+        <script src="tweet-button.js"></script>
       </p>
     </div>
     <script src="app-config.js"></script>

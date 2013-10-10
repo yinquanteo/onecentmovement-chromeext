@@ -10,6 +10,7 @@
     "donation-modal.html"
   ],
   "options_page": "options.html",
+  "content_security_policy": "script-src 'self' https://platform.twitter.com; object-src 'self'; frame-src https://platform.twitter.com",
   "content_scripts" : [
     {
       "matches" : ["http://*/*", "https://*/*"],

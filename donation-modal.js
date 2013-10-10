@@ -59,4 +59,20 @@ $(function() {
   $('#confirm-donation').click(function() {
     Engine.donate(Engine.query);
   });
+  $(".zocial.facebook").click(function() {
+    var width = 575, height = 350;
+    var left_val = (screen.width - width) / 2;
+    var top_val = (screen.height - height) / 2;
+    window.open(
+      'http://www.facebook.com/sharer.php?s=100&' + [
+        'p[title]=One Cent Movement',
+        'p[summary]=I just made a difference by donating my loose change from online shopping.',
+        'p[url]=http://www.onecentmovement.org',
+        'p[images][0]=http://onecent.herokuapp.com/img/logo.png'
+      ].join('&'),
+      'facebook-share-dialog',
+      ['status=1,width=',width,',height=',height,',top=',top_val,',left=',left_val].join('')
+    );
+    return false;
+  });
 });
