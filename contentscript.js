@@ -76,6 +76,10 @@ var onecent = (function() {
     return twoDecimals(roundup);
   };
 
+  var processedAmount = function(amount) {
+    return amount.replace(/,/g,"");
+  };
+
   var displayDonationDialog = function () {
     var amount = matchedAmount();
     if (amount) {
@@ -84,6 +88,7 @@ var onecent = (function() {
         chrome.runtime.sendMessage({action: "fetchToken"}, function(response) {
           authToken = response["token"];
         });
+        amount = processedAmount(amount);
         modalBoss.show({
           total: twoDecimals(amount),
           roundUp: donationTotal(amount),
