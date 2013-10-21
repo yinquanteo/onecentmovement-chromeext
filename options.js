@@ -49,6 +49,9 @@ $(function() {
       type: 'GET',
       success: function(data) {
         signIn(data["email"], data["token"]);
+      },
+      error: function(data) {
+        localStorage.removeItem("token");
       }
     });
   }
