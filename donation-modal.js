@@ -68,7 +68,7 @@ $(function() {
         'p[title]=One Cent Movement',
         'p[summary]=I just made a difference by donating my loose change from online shopping.',
         'p[url]=http://www.onecentmovement.org',
-        'p[images][0]=http://onecentmovement.org/img/logo.png'
+        'p[images][0]=http://www.onecentmovement.org/img/logo.png'
       ].join('&'),
       'facebook-share-dialog',
       ['status=1,width=',width,',height=',height,',top=',top_val,',left=',left_val].join('')

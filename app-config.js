@@ -9,8 +9,8 @@ if (ONECENT_DEVELOPMENT_MODE) {
 } else {
   var ONECENT_CONFIG = {
     popUpDelay: 2000,
-    donationEndPoint: "http://onecentmovement.org/round_ups.json",
-    authTokenEndPoint: "http://onecentmovement.org/tokens",
-    signUpLink: "http://onecentmovement.org/register"
+    donationEndPoint: "http://www.onecentmovement.org/round_ups.json",
+    authTokenEndPoint: "http://www.onecentmovement.org/tokens",
+    signUpLink: "http://www.onecentmovement.org/register"
   };
 }
